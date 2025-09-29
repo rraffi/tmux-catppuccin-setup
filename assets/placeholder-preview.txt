@@ -1,0 +1,30 @@
+# Preview Images Placeholder
+
+To complete the setup, add these preview images to this directory:
+
+## Required Images:
+1. **preview.png** - Main preview screenshot showing the full tmux setup
+2. **mocha-theme.png** - Catppuccin Mocha theme screenshot
+3. **rounded-windows.png** - Rounded window style example
+4. **status-bar.png** - Close-up of the status bar with all modules
+
+## How to Create Screenshots:
+1. Start tmux with the configuration loaded
+2. Open several windows/panes to show the setup
+3. Take screenshots showing:
+   - Full terminal with status bar
+   - Different window states (active/inactive)
+   - Various status bar modules working
+
+## Image Specifications:
+- Format: PNG preferred
+- Resolution: At least 1200px wide
+- Include terminal background for context
+- Show the font rendering clearly
+
+## Tools for Screenshots:
+- macOS: Command+Shift+4 for selection
+- Linux: gnome-screenshot or flameshot
+- Windows: Snipping Tool or PowerToys
+
+Once you have the images, replace this file and update the README.md links accordingly.
