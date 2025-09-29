@@ -31,15 +31,40 @@ echo -e "${BLUE}🖥️  Detected OS: ${MACHINE}${NC}"
 install_mac() {
     echo -e "${BLUE}🍎 Installing on macOS...${NC}"
     
-    # Check if Homebrew is installed
-    if ! command -v brew &> /dev/null; then
-        echo -e "${YELLOW}⚠️  Homebrew not found. Installing Homebrew first...${NC}"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Method 1: Try Homebrew (new method)
+    if command -v brew &> /dev/null; then
+        echo -e "${BLUE}📥 Installing JetBrains Mono Nerd Font via Homebrew...${NC}"
+        # Use the new homebrew-cask installation method
+        if brew install font-jetbrains-mono-nerd-font 2>/dev/null; then
+            echo -e "${GREEN}✅ JetBrains Mono Nerd Font installed successfully via Homebrew!${NC}"
+            return 0
+        else
+            echo -e "${YELLOW}⚠️  Homebrew method failed, trying manual installation...${NC}"
+        fi
     fi
     
-    echo -e "${BLUE}📥 Installing JetBrains Mono Nerd Font via Homebrew...${NC}"
-    brew tap homebrew/cask-fonts
-    brew install --cask font-jetbrains-mono-nerd-font
+    # Method 2: Manual installation
+    echo -e "${BLUE}📥 Downloading JetBrains Mono Nerd Font manually...${NC}"
+    
+    # Create fonts directory
+    FONT_DIR="$HOME/Library/Fonts"
+    mkdir -p "$FONT_DIR"
+    
+    # Download the latest release
+    cd /tmp
+    FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+    curl -fLo JetBrainsMono.zip "$FONT_URL"
+    
+    echo -e "${BLUE}📦 Extracting and installing fonts...${NC}"
+    unzip -o JetBrainsMono.zip -d JetBrainsMono/
+    
+    # Install only the regular font files to avoid duplicates
+    cp JetBrainsMono/JetBrainsMonoNerdFont-*.ttf "$FONT_DIR/" 2>/dev/null || \
+    cp JetBrainsMono/*.ttf "$FONT_DIR/" 2>/dev/null || \
+    cp JetBrainsMono/*.otf "$FONT_DIR/" 2>/dev/null
+    
+    # Cleanup
+    rm -rf JetBrainsMono.zip JetBrainsMono/
     
     echo -e "${GREEN}✅ JetBrains Mono Nerd Font installed successfully on macOS!${NC}"
 }
