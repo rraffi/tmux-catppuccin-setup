@@ -38,6 +38,12 @@ A beautiful, feature-rich tmux configuration using the Catppuccin theme with com
 ```bash
 git clone https://github.com/yourusername/tmux-catppuccin-setup.git
 cd tmux-catppuccin-setup
+./install.sh
+```
+
+### Manual Scripts
+```bash
+# Run individual installation scripts
 ./scripts/install-nerd-font.sh && ./scripts/install-tpm.sh
 ```
 
