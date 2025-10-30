@@ -21,11 +21,11 @@ A beautiful, feature-rich tmux configuration using the Catppuccin theme with com
 - **Mouse support** - Click to switch panes and windows
 
 ### ⌨️ Key Bindings
-- **Prefix**: `Ctrl+c` (instead of default `Ctrl+b`)
+- **Prefix**: `Ctrl+d` (instead of default `Ctrl+b`)
 - **Split panes**: `|` (horizontal) and `-` (vertical)
 - **Vim-style navigation**: `h`/`j`/`k`/`l` for pane movement
 - **Easy resizing**: `H`/`J`/`K`/`L` for pane resizing
-- **Quick reload**: `Ctrl+c` then `r`
+- **Quick reload**: `Ctrl+d` then `r`
 
 ### 🎨 Theme
 - **Catppuccin Mocha** - Dark, elegant color scheme
@@ -87,8 +87,8 @@ cp tmux.conf ~/.tmux.conf
 # Start tmux
 tmux new-session
 
-# Install plugins: Press Ctrl+c then I (capital i)
-# Reload config: Press Ctrl+c then r
+# Install plugins: Press Ctrl+d then I (capital i)
+# Reload config: Press Ctrl+d then r
 ```
 
 ## 📋 Detailed Setup Instructions
@@ -144,9 +144,9 @@ cp tmux.conf ~/.tmux.conf
 
 ### Step 5: Plugin Installation
 1. Start tmux: `tmux new-session`
-2. Install plugins: `Ctrl+c` then `I` (capital i)
+2. Install plugins: `Ctrl+d` then `I` (capital i)
 3. Wait for plugins to install
-4. Reload configuration: `Ctrl+c` then `r`
+4. Reload configuration: `Ctrl+d` then `r`
 
 ## 🎛️ Configuration Details
 
@@ -161,15 +161,15 @@ cp tmux.conf ~/.tmux.conf
 
 | Key Combination | Action |
 |---|---|
-| `Ctrl+c` | Prefix key |
-| `Ctrl+c` + `\|` | Split horizontally |
-| `Ctrl+c` + `-` | Split vertically |
-| `Ctrl+c` + `h/j/k/l` | Navigate panes |
-| `Ctrl+c` + `H/J/K/L` | Resize panes |
-| `Ctrl+c` + `c` | New window |
-| `Ctrl+c` + `r` | Reload config |
-| `Ctrl+c` + `I` | Install plugins |
-| `Ctrl+c` + `U` | Update plugins |
+| `Ctrl+d` | Prefix key |
+| `Ctrl+d` + `\|` | Split horizontally |
+| `Ctrl+d` + `-` | Split vertically |
+| `Ctrl+d` + `h/j/k/l` | Navigate panes |
+| `Ctrl+d` + `H/J/K/L` | Resize panes |
+| `Ctrl+d` + `c` | New window |
+| `Ctrl+d` + `r` | Reload config |
+| `Ctrl+d` + `I` | Install plugins |
+| `Ctrl+d` + `U` | Update plugins |
 
 ### Status Bar Modules
 
@@ -224,7 +224,7 @@ set -g @catppuccin_directory_text " #{pane_current_path}"
 # Remove plugins directory and reinstall
 rm -rf ~/.tmux/plugins
 ./scripts/install-tpm.sh
-# Then reinstall plugins: Ctrl+c + I
+# Then reinstall plugins: Ctrl+d + I
 ```
 
 ### Configuration Not Loading
@@ -238,9 +238,9 @@ tmux show-messages
 
 ### Battery/CPU Not Showing
 These modules may take a moment to initialize. If they don't appear:
-1. Ensure plugins are installed: `Ctrl+c` + `I`
-2. Update plugins: `Ctrl+c` + `U`
-3. Reload config: `Ctrl+c` + `r`
+1. Ensure plugins are installed: `Ctrl+d` + `I`
+2. Update plugins: `Ctrl+d` + `U`
+3. Reload config: `Ctrl+d` + `r`
 
 ## 📸 Screenshots
 
